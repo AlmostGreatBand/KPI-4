@@ -44,7 +44,11 @@ func main() {
 }
 
 func parse(line string) eventloop.Command {
-	values := strings.Split(line, " ")
+	values := strings.Fields(strings.TrimSpace(line))
+	if len(values) < 1 {
+		return &commands.Println{ Message: "error: blank line" }
+	}
+
 	command := values[0]
 	args := values[1:]
 
@@ -54,6 +58,12 @@ func parse(line string) eventloop.Command {
 	case "println": return &commands.Println{ Message: strings.Join(args, " ") }
 	case "printc": return &commands.Printc{ Args: args }
 	case "add": return &commands.Add{ Args: args }
-	default: return &commands.Print{ Message: "error: unexpected method name"}
+	case "reverse": return &commands.Reverse{ Args: args }
+	case "palindrome": return &commands.Palindrome{ Args: args }
+	case "split": return &commands.Split{ Args: args }
+	case "delete": return &commands.Delete{ Args: args }
+	case "cat": return &commands.Cat{ Args: args }
+	case "multiply": return &commands.Multiply{ Args: args }
+	default: return &commands.Println{ Message: "error: unexpected method name" }
 	}
 }

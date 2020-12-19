@@ -5,25 +5,27 @@ import (
 	"strings"
 )
 
-type Reverse struct {
+type Palindrome struct {
 	Args []string
 }
 
-func (r *Reverse) Execute(h eventloop.Handler) {
-	length := len(r.Args)
+func (p *Palindrome) Execute(h eventloop.Handler) {
+	length := len(p.Args)
 	if length < 1 {
-		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [reverse]" }, true)
+		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [palindrome]" }, true)
 		return
 	}
 
 	res := make([]string, length)
-	for i, word := range r.Args {
+	for i, word := range p.Args {
 		reversed := ""
 		for _, char := range word {
 			reversed = string(char) + reversed
 		}
-		res[i] = reversed
+		res[i] = word + reversed
 	}
+
 
 	h.Post(&Println{ Message: strings.Join(res, " ") }, true)
 }
+

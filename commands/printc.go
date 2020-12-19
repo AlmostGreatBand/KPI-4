@@ -13,7 +13,8 @@ type Printc struct {
 
 func (p *Printc) Execute(h eventloop.Handler) {
 	if len(p.Args) != 2 {
-		h.Post(&Println{ Message: "error: missmatch in quantity of arguments [printc]" }, true)
+		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [printc]" }, true)
+		return
 	}
 	str := p.Args[0]
 
