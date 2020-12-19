@@ -23,5 +23,4 @@ func (p *Printc) Execute(h eventloop.Handler) {
 		res := strings.Repeat(str, count)
 		h.Post(&Println{ Message: res }, true)
 	}
-
 }
