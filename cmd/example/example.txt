@@ -1,0 +1,8 @@
+print Hello There!
+sha1 hello
+sha1 hello1 hello2
+sha1 meh
+print May the force be with you
+sha1 hello
+sha1 R2-D2
+print There is another
