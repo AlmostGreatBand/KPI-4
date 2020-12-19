@@ -1,0 +1,4 @@
+sha1 hello
+sha1 hello1 hello2
+sha1 meh
+sha1 hello
