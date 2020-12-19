@@ -51,6 +51,9 @@ func parse(line string) eventloop.Command {
 	switch command {
 	case "sha1": return &commands.Sha1{ Args: args }
 	case "print": return &commands.Print{ Message: strings.Join(args, " ") }
+	case "println": return &commands.Println{ Message: strings.Join(args, " ") }
+	case "printc": return &commands.Printc{ Args: args }
+	case "add": return &commands.Add{ Args: args }
 	default: return &commands.Print{ Message: "error: unexpected method name"}
 	}
 }

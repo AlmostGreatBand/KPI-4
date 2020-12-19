@@ -5,10 +5,10 @@ import (
 	"github.com/AlmostGreatBand/KPI-4/eventloop"
 )
 
-type Print struct {
+type Println struct {
 	Message string
 }
 
-func (p *Print) Execute(_ eventloop.Handler) {
-	fmt.Print(p.Message)
+func (p *Println) Execute(_ eventloop.Handler) {
+	fmt.Println(p.Message)
 }

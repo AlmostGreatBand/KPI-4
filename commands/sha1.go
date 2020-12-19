@@ -18,6 +18,6 @@ func (s *Sha1) Execute(h eventloop.Handler) {
 		res := encryptor.Sum(nil)
 		resHex := fmt.Sprintf("%x", res)
 
-		h.Post(&Print{ Message: resHex }, true)
+		h.Post(&Println{ Message: resHex }, true)
 	}
 }
