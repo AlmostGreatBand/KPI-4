@@ -10,7 +10,7 @@ type Delete struct {
 
 func (d *Delete) Execute(h eventloop.Handler) {
 	if len(d.Args) != 2 {
-		h.Post(&Println{Message: "error: mismatch in quantity of arguments [split]"}, true)
+		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [delete]" }, true)
 		return
 	}
 	str := d.Args[0]

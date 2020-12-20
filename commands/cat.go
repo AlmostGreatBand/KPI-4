@@ -11,7 +11,7 @@ type Cat struct {
 
 func (c *Cat) Execute(h eventloop.Handler) {
 	if len(c.Args) < 1 {
-		h.Post(&Println{Message: "error: mismatch in quantity of arguments [cat]"}, true)
+		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [cat]" }, true)
 		return
 	}
 
