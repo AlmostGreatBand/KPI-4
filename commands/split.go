@@ -11,7 +11,7 @@ type Split struct {
 
 func (s *Split) Execute(h eventloop.Handler) {
 	if len(s.Args) != 2 {
-		h.Post(&Println{Message: "error: mismatch in quantity of arguments [split]"}, true)
+		h.Post(&Println{ Message: "error: mismatch in quantity of arguments [split]" }, true)
 		return
 	}
 	str := s.Args[0]
