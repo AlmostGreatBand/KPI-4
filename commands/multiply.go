@@ -19,7 +19,7 @@ func (m *Multiply) Execute(h eventloop.Handler) {
 	res := 1
 	for _, i := range m.Args {
 		if value, err := strconv.Atoi(i); err != nil {
-			h.Post(&Println{ Message: fmt.Sprintf("error: parem is not a number [multiply] - %s", err) }, true)
+			h.Post(&Println{ Message: fmt.Sprintf("error: param is not a number [multiply] - %s", err) }, true)
 		} else {
 			res *= value
 		}

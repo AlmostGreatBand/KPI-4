@@ -19,7 +19,7 @@ func (a *Add) Execute(h eventloop.Handler) {
 	res := 0
 	for _, i := range a.Args {
 		if value, err := strconv.Atoi(i); err != nil {
-			h.Post(&Println{ Message: fmt.Sprintf("error: parem is not a number [add] - %s", err) }, true)
+			h.Post(&Println{ Message: fmt.Sprintf("error: param is not a number [add] - %s", err) }, true)
 		} else {
 			res += value
 		}
