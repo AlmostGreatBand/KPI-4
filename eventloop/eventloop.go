@@ -15,7 +15,7 @@ func (e *EventLoop) Start() {
 	*/
 	fmt.Println("EVENTLOOP STARTED")
 	e.queue = &Queue{ signal: make(chan struct{}) }
-	e.stopSignal = make(chan struct{}, 10)
+	e.stopSignal = make(chan struct{})
 
 	go func() {
 		for !e.stop || !e.queue.empty() {
