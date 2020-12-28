@@ -45,6 +45,7 @@ func main() {
 	}
 
 	eventLoop.AwaitFinish()
+	eventLoop.Post(&commands.Println{ Message: "this should NOT be printed" }, false)
 
 	/*
 		main doesn't wait for child goroutines,

@@ -4,7 +4,7 @@ println May the force be with you
 println Hello There!
 sha1 R2-D2
 print There is another
-deferred 1 Postponed message 1
+deferred 3 Postponed message 1
 println hello
 printc r 7
 add 1 4 2 5 2
@@ -15,4 +15,4 @@ split acd:ae:ww :
 delete hello l
 cat Hello World !
 multiply 1 5 4 2
-deferred 2 Postponed message 2
+deferred 5 Postponed message 2
