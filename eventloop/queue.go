@@ -25,15 +25,14 @@ func (q *Queue) push(command Command) {
 }
 
 func (q *Queue) pop() Command {
-	q.Lock()
-	defer q.Unlock()
-
 	if q.empty() {
+		q.Lock()
 		q.waited = true
 		q.Unlock()
 		<- q.signal
-		q.Lock()
 	}
+	q.Lock()
+	defer q.Unlock()
 
 	command := q.commands[0]
 	q.commands[0] = nil
@@ -42,5 +41,8 @@ func (q *Queue) pop() Command {
 }
 
 func (q *Queue) empty() bool {
+	q.Lock()
+	defer q.Unlock()
+
 	return len(q.commands) == 0
 }
